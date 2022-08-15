@@ -42,17 +42,14 @@ public class AverageScore_me {
 
             int score = sc.nextInt();
 
-            if (score > 40) {
-                score = score;
-            } else if (score == 40) {
-                score = score;
-            } else if (score < 40) {
+            if (score < 40) {
                 score = 40;
             }
             System.out.println("환산 점수는 = " + score);
             sum = sum + score;
-            average = sum / 5;
+
         }
+            average = sum / 5;
             System.out.println("5명의 평균 점수는 = " + average);
 
         }
