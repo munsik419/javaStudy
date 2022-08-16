@@ -40,32 +40,38 @@ N개의 정수가 주어지면, 이 정수들의 합 S의 부호를 구하는 �
  */
 package kimmunsik;
 
+import java.io.IOException;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Sign_me {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-
 
         //3개의 테스트 셋 제공, 첫째줄에 N 값, 둘째줄부터 N개의 정수, 정수의 합 S
         for (int i = 0; i < 3; i++) {
             int N = sc.nextInt();
-            int S = 0;
+            BigInteger sum = BigInteger.valueOf(0);
 
             for (int j = 0; j < N; j++) {
-                int SN = sc.nextInt();
-                S = S + SN;
+                BigInteger N2 = sc.nextBigInteger();
+
+                sum = sum.add(N2);
 
             }
 
-            if (S > 0) {
-                System.out.println(S);
-                System.out.println("+");
-            } else if (S < 0) {
-                System.out.println(S);
+            //비교 sum>0 "+", sum<0 "-", sum == 0 "0"
+            //기준값.compareTo(비교값)
+            //작으면 -1
+            //크  면  1
+            //같으면  0
+            if (sum.compareTo(BigInteger.ZERO) < 0) {
+                System.out.println(sum);
                 System.out.println("-");
-            }else{
-                System.out.println(S);
+            } else if (sum.compareTo(BigInteger.ZERO) > 0) {
+                System.out.println(sum);
+                System.out.println("+");
+            } else {
                 System.out.println("0");
             }
         }
