@@ -66,10 +66,10 @@ public class Sign_me {
             //크  면  1
             //같으면  0
             if (sum.compareTo(BigInteger.ZERO) < 0) {
-                System.out.println(sum);
+//                System.out.println(sum);
                 System.out.println("-");
             } else if (sum.compareTo(BigInteger.ZERO) > 0) {
-                System.out.println(sum);
+//                System.out.println(sum);
                 System.out.println("+");
             } else {
                 System.out.println("0");
